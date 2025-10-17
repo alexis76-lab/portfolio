@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet — Mise à jour des firmwares</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header projet -->
+  <header class="project-header">
+    <nav>
+      <ul>
+        <li><a href="index.html#projets">⬅ Retour</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <!-- Hero du projet -->
+    <section class="project-hero fade-in" data-delay="0.1">
+      <img src="images/firmware-update.png" alt="Mise à jour firmwares" class="project-image">
+      <h1>Mise à jour des firmwares des switchs via FTP</h1>
+      <p class="subtitle">Maintenance réseau et automatisation</p>
+    </section>
+
+    <!-- Contexte -->
+    <section class="project-section fade-in" data-delay="0.2">
+      <h2>Contexte</h2>
+      <p>Dans le cadre de la maintenance réseau, j’ai réalisé une mise à jour complète des firmwares des switchs dans un environnement de test.</p>
+    </section>
+
+    <!-- Objectif -->
+    <section class="project-section fade-in" data-delay="0.3">
+      <h2>Objectif</h2>
+      <p>Préparer et sécuriser le déploiement des nouveaux firmwares.</p>
+    </section>
+
+    <!-- Méthode -->
+    <section class="project-section fade-in" data-delay="0.4">
+      <h2>Méthode</h2>
+      <ul>
+        <li>Inventaire des switchs</li>
+        <li>Configuration d’un serveur FTP</li>
+        <li>Tests en préproduction</li>
+        <li>Déploiement planifié</li>
+      </ul>
+    </section>
+
+    <!-- Choix techniques -->
+    <section class="project-section fade-in" data-delay="0.5">
+      <h2>Choix techniques</h2>
+      <ul>
+        <li>Serveur VSFTPD</li>
+        <li>Switchs administrables via SSH/Console</li>
+        <li>Scripts d’automatisation</li>
+      </ul>
+    </section>
+
+    <!-- Planning -->
+    <section class="project-section fade-in" data-delay="0.6">
+      <h2>Planning</h2>
+      <p>1 semaine : 2 jours préparation — 2 jours test — 1 jour déploiement</p>
+    </section>
+
+    <!-- Bilan -->
+    <section class="project-section fade-in" data-delay="0.7">
+      <h2>Bilan</h2>
+      <p>Mise à jour réussie, aucune coupure réseau en production ✅</p>
+    </section>
+
+    <!-- Boutons -->
+    <div class="project-buttons fade-in" data-delay="0.8">
+      <a href="index.html#projets" class="btn">⬅ Retour sur le Portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Alexis Beaufils — BTS SIO</p>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Fade-in avec delay
+    const faders = document.querySelectorAll('.fade-in');
+    faders.forEach(el => {
+      el.style.opacity = 0;
+      el.style.transform = 'translateY(40px)';
+      const delay = parseFloat(el.dataset.delay) || 0;
+      setTimeout(() => {
+        el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        el.style.opacity = 1;
+        el.style.transform = 'translateY(0)';
+      }, delay * 1000);
+    });
+  </script>
+</body>
+</html>
