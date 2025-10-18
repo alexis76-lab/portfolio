@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Épreuve E6 — BTS SIO</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="project-header">
+    <nav>
+      <ul>
+        <li><a href="index.html#epreuves">⬅ Retour</a></li>
+      </ul>
+      <div class="theme-toggle">🌙</div>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero fade-in" data-delay="0.1">
+      <img src="/home/alexis/Musique/Portfolio-test/e6.PNG" alt="E6 Administration" class="project-image parallax">
+      <h1>Épreuve E6 – Administration des systèmes et réseaux</h1>
+      <p class="subtitle">à faire</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.2">
+      <h2>Contexte</h2>
+      <p>à faire</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.3">
+      <h2>Objectif</h2>
+      <p>à faire</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.4">
+      <h2>Méthode</h2>
+      <ul>
+      <p>à faire</p>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.5">
+      <h2>Choix techniques</h2>
+      <ul>
+      <p>à faire</p>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.6">
+      <h2>Planning</h2>
+      <p>à faire</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.7">
+      <h2>Bilan</h2>
+      <p>à faire.</p>
+    </section>
+
+    <div class="project-buttons fade-in" data-delay="0.8">
+      <a href="index.html#epreuves" class="btn">⬅ Retour sur le Portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Alexis Beaufils — BTS SIO</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Retour en haut">⬆️</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fader => observer.observe(fader));
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => scrollBtn.style.display = (window.scrollY > 300 ? "block" : "none"));
+    scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    const parallaxImages = document.querySelectorAll(".parallax");
+    window.addEventListener("mousemove", e => {
+      const x = (window.innerWidth/2 - e.pageX)/50;
+      const y = (window.innerHeight/2 - e.pageY)/50;
+      parallaxImages.forEach(img => img.style.transform = `translate(${x}px, ${y}px)`);
+    });
+  </script>
+</body>
+</html>

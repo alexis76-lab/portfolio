@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet — Politique de mot de passe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="project-header">
+    <nav>
+      <ul>
+        <li><a href="index.html#projets">⬅ Retour</a></li>
+      </ul>
+      <div class="theme-toggle">🌙</div>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero fade-in" data-delay="0.1">
+      <img src="/home/alexis/Musique/Portfolio-test/politique-de-mdp.png" alt="Politique de mot de passe" class="project-image parallax">
+      <h1>Mise en place d'une politique de mot de passe via Specops</h1>
+      <p class="subtitle">Sécurité Active Directory</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.2">
+      <h2>Contexte</h2>
+      <p>Renforcer la sécurité des comptes utilisateurs en appliquant une politique conforme aux bonnes pratiques via Specops.</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.3">
+      <h2>Objectif</h2>
+      <p>Réduire les incidents liés aux mots de passe et sécuriser les comptes.</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.4">
+      <h2>Méthode</h2>
+      <ul>
+        <li>Audit</li>
+        <li>Configuration via Specops Password Policy</li>
+        <li>Déploiement et suivi</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.5">
+      <h2>Choix techniques</h2>
+      <ul>
+        <li>Specops Password Policy</li>
+        <li>Specops Password Auditor</li>
+        <li>Active Directory</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.6">
+      <h2>Planning</h2>
+      <p>Présentation du logiciel Specops</p>
+      <p>Prévention en amont de la nouvelle politique</p>
+      <p>Configuration de Specops</p>
+      <p>Annonce de la mise en vigueur</p>
+    </section>
+
+    <section class="project-section fade-in" data-delay="0.7">
+      <h2>Bilan</h2>
+      <p>Mots de passe plus sécurisés 👌</p>
+    </section>
+
+    <div class="project-buttons fade-in" data-delay="0.8">
+      <a href="index.html#projets" class="btn">⬅ Retour sur le Portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Alexis Beaufils — BTS SIO</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Retour en haut">⬆️</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fader => observer.observe(fader));
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    const scrollBtn = document.getElementById("scrollTopBtn");
+    window.addEventListener("scroll", () => scrollBtn.style.display = (window.scrollY > 300 ? "block" : "none"));
+    scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+    const parallaxImages = document.querySelectorAll(".parallax");
+    window.addEventListener("mousemove", e => {
+      const x = (window.innerWidth/2 - e.pageX)/50;
+      const y = (window.innerHeight/2 - e.pageY)/50;
+      parallaxImages.forEach(img => img.style.transform = `translate(${x}px, ${y}px)`);
+    });
+  </script>
+</body>
+</html>
