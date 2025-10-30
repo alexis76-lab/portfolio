@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>a faire</title>
+  <title>Création d’une Active Directory sur Windows Server 2019</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,43 +21,83 @@
 
   <main class="project-page">
     <section class="project-hero fade-in" data-delay="0.1">
-      <img src="firmware.png" alt="Mise à jour firmwares" class="project-image parallax">
-      <h1>a faire</h1>
-      <p class="subtitle">a faire</p>
+      <img src="windowsserver.png" alt="Création d’une Active Directory" class="project-image parallax">
+      <h1>Création d’une Active Directory sur Windows Server 2019</h1>
+      <p class="subtitle">Mise en place d’un contrôleur de domaine fonctionnel</p>
     </section>
 
     <section class="project-section fade-in" data-delay="0.2">
       <h2>Contexte</h2>
-      <p>a faire</p>
+      <p>
+        Dans le cadre d’un projet d’administration système, il a été nécessaire de mettre en place une infrastructure 
+        Active Directory (AD) sous Windows Server 2019. L’objectif était de centraliser la gestion des utilisateurs, 
+        des groupes et des ressources réseau au sein d’un environnement d’entreprise simulé. Ce projet visait à renforcer 
+        mes compétences en administration Windows Server, en gestion de domaine et en configuration réseau.
+      </p>
     </section>
 
     <section class="project-section fade-in" data-delay="0.3">
       <h2>Objectif</h2>
-      <p>a faire</p>
+      <p>
+        Mettre en place un contrôleur de domaine fonctionnel basé sur Active Directory afin de :
+      </p>
+      <ul>
+        <li>Centraliser l’authentification et la gestion des utilisateurs.</li>
+        <li>Organiser les postes clients au sein d’un même domaine.</li>
+        <li>Implémenter des stratégies de sécurité via les GPO (Group Policy Objects).</li>
+        <li>Faciliter l’administration et la maintenance du réseau.</li>
+      </ul>
     </section>
 
     <section class="project-section fade-in" data-delay="0.4">
       <h2>Méthode</h2>
       <ul>
-        <li>a faire</li>
+        <li><strong>Installation de Windows Server 2019 :</strong> mise en place du système sur une machine virtuelle via VMware ou Hyper-V, configuration du nom d’hôte et de l’adresse IP statique.</li>
+        <li><strong>Ajout du rôle AD DS :</strong> installation du rôle Active Directory Domain Services et promotion du serveur en contrôleur de domaine.</li>
+        <li><strong>Création du domaine :</strong> configuration d’un domaine interne nommé <code>safelink.local</code>.</li>
+        <li><strong>Configuration du domaine :</strong> création des UO (Utilisateurs, Groupes, Ordinateurs), ajout des comptes utilisateurs et groupes de sécurité.</li>
+        <li><strong>Ajout des postes clients :</strong> intégration de machines Windows 10/11 au domaine et test des connexions.</li>
+        <li><strong>Application des GPO :</strong> mise en place de stratégies de mot de passe et de sécurité pour les utilisateurs du domaine.</li>
       </ul>
     </section>
 
     <section class="project-section fade-in" data-delay="0.5">
       <h2>Choix techniques</h2>
       <ul>
-        <li>a faire</li>
+        <li><strong>Système d’exploitation :</strong> Windows Server 2019 Standard</li>
+        <li><strong>Virtualisation :</strong> VMware Workstation / Hyper-V</li>
+        <li><strong>Adresse IP :</strong> statique (nécessaire pour le DNS et le domaine)</li>
+        <li><strong>Rôle principal :</strong> Active Directory Domain Services (AD DS)</li>
+        <li><strong>DNS intégré :</strong> utilisé pour la résolution interne</li>
+        <li><strong>Nom de domaine :</strong> safelink.local</li>
       </ul>
     </section>
 
     <section class="project-section fade-in" data-delay="0.6">
       <h2>Planning</h2>
-      <p>à faire</p>
+      <table>
+        <tr><th>Étape</th><th>Tâche</th><th>Durée estimée</th></tr>
+        <tr><td>1</td><td>Installation de Windows Server 2019</td><td>1h</td></tr>
+        <tr><td>2</td><td>Configuration réseau et prérequis</td><td>30 min</td></tr>
+        <tr><td>3</td><td>Installation du rôle AD DS</td><td>45 min</td></tr>
+        <tr><td>4</td><td>Création du domaine et redémarrage</td><td>30 min</td></tr>
+        <tr><td>5</td><td>Ajout des utilisateurs et groupes</td><td>1h</td></tr>
+        <tr><td>6</td><td>Configuration GPO et tests clients</td><td>1h30</td></tr>
+        <tr><td colspan="2"><strong>Total estimé</strong></td><td><strong>≈ 5h15</strong></td></tr>
+      </table>
     </section>
 
     <section class="project-section fade-in" data-delay="0.7">
       <h2>Bilan</h2>
-      <p>à faire </p>
+      <p>
+        Le déploiement de l’Active Directory s’est déroulé avec succès. Le domaine est fonctionnel et permet la gestion centralisée 
+        des utilisateurs et ordinateurs. Les tests de connexion depuis les postes clients ont confirmé la bonne intégration au domaine.
+      </p>
+      <p>
+        Ce projet m’a permis de mieux comprendre la logique de fonctionnement d’un domaine Windows, la hiérarchie des objets Active Directory 
+        et l’importance des GPO dans la sécurité réseau. Des évolutions futures pourraient inclure la mise en place d’un DNS secondaire, 
+        d’un serveur DHCP intégré et d’un second contrôleur de domaine pour la redondance.
+      </p>
     </section>
 
     <div class="project-buttons fade-in" data-delay="0.8">
@@ -104,6 +144,3 @@
   </script>
 </body>
 </html>
-
-
-
