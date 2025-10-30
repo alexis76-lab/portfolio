@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>a faire</title>
+  <title>Mise en place de GLPI avec LDAP et gestion du parc informatique</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,49 +15,75 @@
       <ul>
         <li><a href="index.html#projets">⬅ Retour</a></li>
       </ul>
-      <div class="theme-toggle">🌙</div>
+      <div class="theme-toggle" role="button" aria-label="Changer de thème">🌙</div>
     </nav>
   </header>
 
   <main class="project-page">
     <section class="project-hero fade-in" data-delay="0.1">
-      <img src="politique-de-mdp.png" alt="Politique de mot de passe" class="project-image parallax">
-      <h1>a faire</h1>
-      <p class="subtitle">a faire</p>
+      <img src="glpi.png" alt="Projet GLPI et LDAP" class="project-image parallax">
+      <h1>Mise en place d’un GLPI avec LDAP et gestion du parc informatique</h1>
+      <p class="subtitle">Déploiement d’une solution de gestion centralisée des ressources et du support IT</p>
     </section>
 
     <section class="project-section fade-in" data-delay="0.2">
       <h2>Contexte</h2>
-      <p>a faire</p>
+      <p>
+        Dans le cadre d’un projet d’administration réseau et de gestion IT, l’objectif était de déployer une solution complète
+        permettant la gestion du parc informatique, des utilisateurs et du support technique.
+        Le choix s’est porté sur <strong>GLPI</strong>, un outil libre et modulaire, couplé à un <strong>annuaire LDAP</strong> pour centraliser
+        les authentifications et simplifier la maintenance des comptes utilisateurs.
+      </p>
     </section>
 
     <section class="project-section fade-in" data-delay="0.3">
       <h2>Objectif</h2>
-      <p>a faire</p>
+      <ul>
+        <li>Déployer une plateforme GLPI pour la gestion du parc et des tickets.</li>
+        <li>Connecter GLPI à un annuaire LDAP pour la synchronisation des comptes utilisateurs.</li>
+        <li>Centraliser le suivi du matériel, des logiciels et des incidents.</li>
+        <li>Améliorer la réactivité et la traçabilité du service informatique.</li>
+      </ul>
     </section>
 
     <section class="project-section fade-in" data-delay="0.4">
       <h2>Méthode</h2>
       <ul>
-        <li>a faire</li>
+        <li><strong>Analyse des besoins :</strong> identification des fonctionnalités nécessaires pour la gestion du parc et du support.</li>
+        <li><strong>Installation du serveur GLPI :</strong> déploiement sur un serveur Linux (Debian/Ubuntu) avec Apache2, PHP et MariaDB.</li>
+        <li><strong>Configuration de la base de données :</strong> création du schéma et paramétrage des accès sécurisés.</li>
+        <li><strong>Intégration LDAP :</strong> liaison de GLPI à un annuaire LDAP.</li>
+        <li><strong>Gestion des profils et entités :</strong> définition des rôles (utilisateur, technicien, administrateur).</li>
+        <li><strong>Installation de FusionInventory :</strong> inventaire automatique des postes, imprimantes et périphériques.</li>
+        <li><strong>Tests et validation :</strong> ouverture de tickets, suivi des incidents.</li>
       </ul>
     </section>
 
     <section class="project-section fade-in" data-delay="0.5">
       <h2>Choix techniques</h2>
       <ul>
-        <li>a faire</li>
+        <li><strong>Système d’exploitation :</strong> Debian</li>
+        <li><strong>Application principale :</strong> GLPI</li>
+        <li><strong>Base de données :</strong> MariaDB</li>
+        <li><strong>Serveur web :</strong> Apache2</li>
+        <li><strong>Annuaire :</strong> LDAP</li>
+        <li><strong>Agent d’inventaire :</strong> FusionInventory</li>
+        <li><strong>Accès :</strong> Interface web sécurisée (HTTPS)</li>
       </ul>
-    </section>
-
-    <section class="project-section fade-in" data-delay="0.6">
-      <h2>Planning</h2>
-      <p>a faire</p>
     </section>
 
     <section class="project-section fade-in" data-delay="0.7">
       <h2>Bilan</h2>
-      <p>a faire</p>
+      <p>
+        Le projet a permis de mettre en œuvre une solution complète de gestion du support et du parc informatique. 
+        L’intégration LDAP a simplifié la gestion des comptes. 
+        Grâce à FusionInventory, la collecte d’informations sur le matériel est automatisée, facilitant le suivi et la maintenance.
+      </p>
+      <p>
+        Ce projet m’a permis d’approfondir mes compétences en administration réseau, en gestion de base de données et 
+        en automatisation IT. De futures améliorations pourraient inclure la mise en place d’un module de reporting 
+        avancé et d’un serveur de sauvegarde redondant.
+      </p>
     </section>
 
     <div class="project-buttons fade-in" data-delay="0.8">
@@ -72,18 +98,21 @@
   <button id="scrollTopBtn" title="Retour en haut">⬆️</button>
 
   <script>
+    // Mise à jour de l'année
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Effet fade-in à l'apparition
     const faders = document.querySelectorAll('.fade-in');
-    const observer = new IntersectionObserver(entries => {
+    const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if(entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.2 });
     faders.forEach(fader => observer.observe(fader));
 
+    // Gestion du thème clair/sombre
     const themeToggle = document.querySelector('.theme-toggle');
-    if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    if (localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
     themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
     themeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light-mode');
@@ -91,18 +120,24 @@
       localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
     });
 
-    const scrollBtn = document.getElementById("scrollTopBtn");
-    window.addEventListener("scroll", () => scrollBtn.style.display = (window.scrollY > 300 ? "block" : "none"));
-    scrollBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    // Bouton retour en haut
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => {
+      scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
 
-    const parallaxImages = document.querySelectorAll(".parallax");
-    window.addEventListener("mousemove", e => {
-      const x = (window.innerWidth/2 - e.pageX)/50;
-      const y = (window.innerHeight/2 - e.pageY)/50;
-      parallaxImages.forEach(img => img.style.transform = `translate(${x}px, ${y}px)`);
+    // Effet parallax
+    const parallaxImages = document.querySelectorAll('.parallax');
+    window.addEventListener('mousemove', (e) => {
+      const x = (window.innerWidth / 2 - e.pageX) / 50;
+      const y = (window.innerHeight / 2 - e.pageY) / 50;
+      parallaxImages.forEach(img => {
+        img.style.transform = `translate(${x}px, ${y}px)`;
+      });
     });
   </script>
 </body>
 </html>
-
-
