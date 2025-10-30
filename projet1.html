@@ -44,7 +44,7 @@
       <ul>
         <li>Centraliser l’authentification et la gestion des utilisateurs.</li>
         <li>Organiser les postes clients au sein d’un même domaine.</li>
-        <li>Implémenter des stratégies de sécurité via les GPO (Group Policy Objects).</li>
+        <li>Implémenter des GPO.</li>
         <li>Faciliter l’administration et la maintenance du réseau.</li>
       </ul>
     </section>
@@ -52,11 +52,11 @@
     <section class="project-section fade-in" data-delay="0.4">
       <h2>Méthode</h2>
       <ul>
-        <li><strong>Installation de Windows Server 2019 :</strong> mise en place du système sur une machine virtuelle via VMware ou Hyper-V, configuration du nom d’hôte et de l’adresse IP statique.</li>
+        <li><strong>Installation de Windows Server 2019 :</strong> mise en place du système sur une machine virtuelle via Proxmox, configuration du nom d’hôte et de l’adresse IP statique.</li>
         <li><strong>Ajout du rôle AD DS :</strong> installation du rôle Active Directory Domain Services et promotion du serveur en contrôleur de domaine.</li>
-        <li><strong>Création du domaine :</strong> configuration d’un domaine interne nommé <code>safelink.local</code>.</li>
-        <li><strong>Configuration du domaine :</strong> création des UO (Utilisateurs, Groupes, Ordinateurs), ajout des comptes utilisateurs et groupes de sécurité.</li>
-        <li><strong>Ajout des postes clients :</strong> intégration de machines Windows 10/11 au domaine et test des connexions.</li>
+        <li><strong>Création du domaine :</strong> configuration d’un domaine interne nommé <code>btssio.local</code>.</li>
+        <li><strong>Configuration du domaine :</strong> création des UO, ajout des comptes utilisateurs et groupes de sécurité.</li>
+        <li><strong>Ajout des postes clients :</strong> intégration des machines Windows au domaine et test des connexions.</li>
         <li><strong>Application des GPO :</strong> mise en place de stratégies de mot de passe et de sécurité pour les utilisateurs du domaine.</li>
       </ul>
     </section>
@@ -65,26 +65,12 @@
       <h2>Choix techniques</h2>
       <ul>
         <li><strong>Système d’exploitation :</strong> Windows Server 2019 Standard</li>
-        <li><strong>Virtualisation :</strong> VMware Workstation / Hyper-V</li>
-        <li><strong>Adresse IP :</strong> statique (nécessaire pour le DNS et le domaine)</li>
-        <li><strong>Rôle principal :</strong> Active Directory Domain Services (AD DS)</li>
-        <li><strong>DNS intégré :</strong> utilisé pour la résolution interne</li>
-        <li><strong>Nom de domaine :</strong> safelink.local</li>
+        <li><strong>Virtualisation :</strong> Proxmox</li>
+        <li><strong>Adresse IP :</strong> statique </li>
+        <li><strong>Rôle principal :</strong> Active Directory Domain Services li>
+        <li><strong>DNS :</strong> utilisé pour la résolution interne</li>
+        <li><strong>Nom de domaine :</strong> btssio.local</li>
       </ul>
-    </section>
-
-    <section class="project-section fade-in" data-delay="0.6">
-      <h2>Planning</h2>
-      <table>
-        <tr><th>Étape</th><th>Tâche</th><th>Durée estimée</th></tr>
-        <tr><td>1</td><td>Installation de Windows Server 2019</td><td>1h</td></tr>
-        <tr><td>2</td><td>Configuration réseau et prérequis</td><td>30 min</td></tr>
-        <tr><td>3</td><td>Installation du rôle AD DS</td><td>45 min</td></tr>
-        <tr><td>4</td><td>Création du domaine et redémarrage</td><td>30 min</td></tr>
-        <tr><td>5</td><td>Ajout des utilisateurs et groupes</td><td>1h</td></tr>
-        <tr><td>6</td><td>Configuration GPO et tests clients</td><td>1h30</td></tr>
-        <tr><td colspan="2"><strong>Total estimé</strong></td><td><strong>≈ 5h15</strong></td></tr>
-      </table>
     </section>
 
     <section class="project-section fade-in" data-delay="0.7">
@@ -94,8 +80,7 @@
         des utilisateurs et ordinateurs. Les tests de connexion depuis les postes clients ont confirmé la bonne intégration au domaine.
       </p>
       <p>
-        Ce projet m’a permis de mieux comprendre la logique de fonctionnement d’un domaine Windows, la hiérarchie des objets Active Directory 
-        et l’importance des GPO dans la sécurité réseau. Des évolutions futures pourraient inclure la mise en place d’un DNS secondaire, 
+        Ce projet m’a permis de mieux comprendre la logique de fonctionnement d’un domaine Windows. Des évolutions futures pourraient inclure la mise en place d’un DNS secondaire, 
         d’un serveur DHCP intégré et d’un second contrôleur de domaine pour la redondance.
       </p>
     </section>
