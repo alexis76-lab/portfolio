@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 5 - Gestion des tickets incidents</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="project-header">
+    <nav>
+      <ul>
+        <li><a href="index.html#projets">⬅ Retour</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">🌙</button>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero fade-in">
+      <img src="e6.PNG" alt="Gestion des tickets incidents" class="project-image parallax">
+      <h1>Résolution d’environ 450 tickets incidents</h1>
+      <p class="subtitle">Support utilisateurs et interventions techniques multi-domaines</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Contexte</h2>
+      <p>Ce projet regroupe l’activité de support informatique réalisée en environnement professionnel, avec le traitement d’environ 450 tickets incidents et demandes de service.</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Types d’interventions réalisées</h2>
+      <ul>
+        <li>Changement et déploiement de postes, écrans, imprimantes et téléphones fixes.</li>
+        <li>Création de comptes utilisateurs sur Active Directory et boîtes mail Office 365.</li>
+        <li>Installation et assistance VPN pour les utilisateurs distants.</li>
+        <li>Participation à la réparation de la borne d’accueil avec le prestataire.</li>
+        <li>Création de badges d’accès avec le logiciel SimonsVoss.</li>
+        <li>Attribution et modification de droits d’accès sur les fichiers et dossiers partagés.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Compétences mobilisées</h2>
+      <ul>
+        <li>Support de proximité et diagnostic d’incidents.</li>
+        <li>Administration des identités (AD / Microsoft 365).</li>
+        <li>Gestion des accès, sécurité opérationnelle et traçabilité.</li>
+        <li>Communication avec les utilisateurs et coordination avec des prestataires.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Résultats / Bilan</h2>
+      <p>Le volume d’incidents traité a permis d’améliorer la continuité de service et la satisfaction des utilisateurs. Ce projet m’a donné une forte expérience en support technique, en organisation des priorités et en gestion des accès.</p>
+    </section>
+
+    <div class="project-buttons fade-in">
+      <a href="index.html#projets" class="btn">⬅ Retour au portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Alexis Beaufils — BTS SIO</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Retour en haut">⬆️</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fader => observer.observe(fader));
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => scrollBtn.style.display = (window.scrollY > 300 ? 'block' : 'none'));
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const parallaxImages = document.querySelectorAll('.parallax');
+    window.addEventListener('mousemove', e => {
+      const x = (window.innerWidth / 2 - e.pageX) / 50;
+      const y = (window.innerHeight / 2 - e.pageY) / 50;
+      parallaxImages.forEach(img => img.style.transform = `translate(${x}px, ${y}px)`);
+    });
+  </script>
+</body>
+</html>

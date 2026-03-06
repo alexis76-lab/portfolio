@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 6 - SIEM Wazuh</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="project-header">
+    <nav>
+      <ul>
+        <li><a href="index.html#projets">⬅ Retour</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">🌙</button>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero fade-in">
+      <img src="e7.PNG" alt="Mise en place SIEM Wazuh" class="project-image parallax">
+      <h1>Mise en place d’un SIEM avec Wazuh</h1>
+      <p class="subtitle">Supervision sécurité centralisée et détection d’incidents</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Contexte</h2>
+      <p>Dans une démarche de cybersécurité, j’ai déployé Wazuh pour centraliser la collecte des logs, améliorer la visibilité sur les événements de sécurité et accélérer la détection d’activités suspectes.</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Objectifs</h2>
+      <ul>
+        <li>Centraliser les journaux systèmes et sécurité des équipements.</li>
+        <li>Détecter les comportements anormaux et les tentatives d’intrusion.</li>
+        <li>Mettre en place des alertes exploitables pour l’administration.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Architecture et mise en œuvre</h2>
+      <ul>
+        <li>Installation du serveur Wazuh (manager + dashboard).</li>
+        <li>Déploiement des agents sur les machines à superviser.</li>
+        <li>Configuration des règles, seuils et tableaux de bord.</li>
+        <li>Collecte et corrélation des événements (authentification, réseau, système).</li>
+        <li>Validation via des scénarios de test pour vérifier la remontée d’alertes.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Résultats / Bilan</h2>
+      <p>La solution SIEM a permis d’améliorer la surveillance de l’infrastructure et la réactivité face aux incidents. Ce projet m’a apporté des compétences concrètes en supervision sécurité, analyse de logs et gestion d’alertes.</p>
+    </section>
+
+    <div class="project-buttons fade-in">
+      <a href="index.html#projets" class="btn">⬅ Retour au portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Alexis Beaufils — BTS SIO</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Retour en haut">⬆️</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fader => observer.observe(fader));
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => scrollBtn.style.display = (window.scrollY > 300 ? 'block' : 'none'));
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const parallaxImages = document.querySelectorAll('.parallax');
+    window.addEventListener('mousemove', e => {
+      const x = (window.innerWidth / 2 - e.pageX) / 50;
+      const y = (window.innerHeight / 2 - e.pageY) / 50;
+      parallaxImages.forEach(img => img.style.transform = `translate(${x}px, ${y}px)`);
+    });
+  </script>
+</body>
+</html>

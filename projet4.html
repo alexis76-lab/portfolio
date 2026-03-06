@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 4 - Mise à jour firmware switch Huawei</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="project-header">
+    <nav>
+      <ul>
+        <li><a href="index.html#projets">⬅ Retour</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">🌙</button>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero fade-in">
+      <img src="firmware.png" alt="Mise à jour firmware switch Huawei" class="project-image parallax">
+      <h1>Mise à jour des firmwares des switchs Huawei via serveur FTP</h1>
+      <p class="subtitle">Maintenance préventive et fiabilisation du réseau</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Contexte</h2>
+      <p>Dans le cadre de la maintenance du parc réseau, une mise à jour des firmwares de switchs Huawei a été réalisée pour corriger des vulnérabilités, améliorer la stabilité et garantir la compatibilité des équipements.</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Objectifs</h2>
+      <ul>
+        <li>Standardiser les versions firmware sur l’ensemble des équipements.</li>
+        <li>Corriger les anomalies de fonctionnement observées en production.</li>
+        <li>Réduire les risques de sécurité liés à des versions obsolètes.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Méthode</h2>
+      <ul>
+        <li>Préparation d’un serveur FTP avec les images firmware validées.</li>
+        <li>Vérification des versions existantes et sauvegarde de la configuration.</li>
+        <li>Transfert des firmwares vers les switchs Huawei via FTP.</li>
+        <li>Application des mises à jour et redémarrage contrôlé des équipements.</li>
+        <li>Tests post-mise à jour: connectivité, VLAN, ports uplink et supervision.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Résultats / Bilan</h2>
+      <p>La mise à jour a été effectuée avec succès sur les équipements ciblés, avec une amélioration de la stabilité réseau et une réduction des risques liés aux versions anciennes. Ce projet m’a permis de renforcer mes compétences en administration réseau et en gestion de maintenance.</p>
+    </section>
+
+    <div class="project-buttons fade-in">
+      <a href="index.html#projets" class="btn">⬅ Retour au portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Alexis Beaufils — BTS SIO</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Retour en haut">⬆️</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fader => observer.observe(fader));
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => scrollBtn.style.display = (window.scrollY > 300 ? 'block' : 'none'));
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const parallaxImages = document.querySelectorAll('.parallax');
+    window.addEventListener('mousemove', e => {
+      const x = (window.innerWidth / 2 - e.pageX) / 50;
+      const y = (window.innerHeight / 2 - e.pageY) / 50;
+      parallaxImages.forEach(img => img.style.transform = `translate(${x}px, ${y}px)`);
+    });
+  </script>
+</body>
+</html>

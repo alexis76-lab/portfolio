@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet 3 - Politique de mots de passe</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header class="project-header">
+    <nav>
+      <ul>
+        <li><a href="index.html#projets">⬅ Retour</a></li>
+      </ul>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème">🌙</button>
+    </nav>
+  </header>
+
+  <main class="project-page">
+    <section class="project-hero fade-in">
+      <img src="politique-de-mdp.png" alt="Projet politique de mots de passe" class="project-image parallax">
+      <h1>Mise en place d’une nouvelle politique de mots de passe</h1>
+      <p class="subtitle">Renforcement de la sécurité des comptes utilisateurs</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Contexte</h2>
+      <p>Dans le cadre de la sécurisation du système d’information, une nouvelle politique de mots de passe a été déployée afin de réduire les risques de compromission de comptes et d’attaques par force brute.</p>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Objectifs</h2>
+      <ul>
+        <li>Imposer des mots de passe plus robustes pour tous les utilisateurs.</li>
+        <li>Limiter la réutilisation de mots de passe faibles ou déjà utilisés.</li>
+        <li>Mettre en conformité la sécurité des comptes avec les bonnes pratiques.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Actions réalisées</h2>
+      <ul>
+        <li>Définition d’une longueur minimale et de critères de complexité.</li>
+        <li>Mise en place d’une durée de validité et d’un historique des mots de passe.</li>
+        <li>Paramétrage des règles de verrouillage après tentatives échouées.</li>
+        <li>Application de la stratégie via GPO sur l’environnement Active Directory.</li>
+      </ul>
+    </section>
+
+    <section class="project-section fade-in">
+      <h2>Résultats / Bilan</h2>
+      <p>La politique a permis d’améliorer le niveau de sécurité global des comptes et de sensibiliser les utilisateurs aux bonnes pratiques. Ce projet m’a renforcé sur la gestion de la sécurité Active Directory et des GPO.</p>
+    </section>
+
+    <div class="project-buttons fade-in">
+      <a href="index.html#projets" class="btn">⬅ Retour au portfolio</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Alexis Beaufils — BTS SIO</p>
+  </footer>
+
+  <button id="scrollTopBtn" title="Retour en haut">⬆️</button>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const faders = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    faders.forEach(fader => observer.observe(fader));
+
+    const themeToggle = document.querySelector('.theme-toggle');
+    if(localStorage.getItem('theme') === 'light') document.body.classList.add('light-mode');
+    themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      themeToggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+      localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+    });
+
+    const scrollBtn = document.getElementById('scrollTopBtn');
+    window.addEventListener('scroll', () => scrollBtn.style.display = (window.scrollY > 300 ? 'block' : 'none'));
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const parallaxImages = document.querySelectorAll('.parallax');
+    window.addEventListener('mousemove', e => {
+      const x = (window.innerWidth / 2 - e.pageX) / 50;
+      const y = (window.innerHeight / 2 - e.pageY) / 50;
+      parallaxImages.forEach(img => img.style.transform = `translate(${x}px, ${y}px)`);
+    });
+  </script>
+</body>
+</html>
