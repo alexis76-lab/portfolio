@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projet d'ecole fil rouge Linux ShokaCorp : administration, configuration, validation technique et documentation dans un contexte pedagogique.">
-  <title>Projet 7 - TP Fil Rouge Linux ShokaCorp</title>
+  <meta name="description" content="Projet d'école Docker Compose : création d'un homelab multiservice avec dashboard, outils IT, gestionnaire de mots de passe, supervision et services auto-hébergés.">
+  <title>Projet 7 - TP Docker Compose Homelab</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,112 +15,353 @@
       <ul>
         <li><a href="index.html#projets">&#8592; Retour</a></li>
       </ul>
-      <button class="theme-toggle" type="button" aria-label="Changer de theme"></button>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème"></button>
     </nav>
   </header>
 
   <main class="project-page">
     <section class="project-hero fade-in">
-      <img src="salle-serveur-moderne-securisee.png" alt="Projet ecole Linux ShokaCorp" class="project-image parallax">
-      <h1>TP Fil Rouge Linux - ShokaCorp</h1>
-      <p class="subtitle">Projet d'ecole base sur un environnement Linux, realise dans le cadre de ma formation autour de l'entreprise fictive ShokaCorp.</p>
+      <img src="salle-serveur-moderne-securisee.png" alt="Projet Docker Compose Homelab" class="project-image parallax">
+      <h1>TP Docker Compose - Homelab</h1>
+      <p class="subtitle">Projet d'école autour de la création d'un homelab multiservice avec Docker Compose, dashboards, outils IT, supervision, gestion de mots de passe et services auto-hébergés.</p>
     </section>
 
     <section class="project-summary fade-in">
       <div class="project-panel">
         <h2>Contexte</h2>
-        <p>Ce projet d'ecole m'a permis de travailler sur un fil rouge Linux en autonomie, avec une logique de mise en place, de configuration et de validation d'un environnement technique. Il s'inscrit dans le cadre de ma formation et de la mise en pratique des competences systeme.</p>
+        <p>Ce projet d'école avait pour objectif de créer un homelab personnalisé avec Docker Compose. L'idée était de regrouper plusieurs services utiles dans un environnement Linux, avec une interface de gestion, des outils d'administration, des services de sécurité et des solutions de supervision.</p>
+        <p>Le fichier <code>docker-compose.yml</code> permet de déclarer les conteneurs, les ports, les volumes persistants et le réseau commun <code>homelab</code>. Le TP demande aussi de justifier les choix techniques autour de l'originalité, de la sécurité et des performances.</p>
       </div>
       <aside class="project-panel">
         <h3>Outils et environnement</h3>
         <div class="project-tags">
+          <span class="project-tag">Docker Compose</span>
+          <span class="project-tag">Homelab</span>
+          <span class="project-tag">Projet d'école</span>
           <span class="project-tag">Linux</span>
-          <span class="project-tag">Projet d'ecole</span>
-          <span class="project-tag">Administration</span>
-          <span class="project-tag">Configuration</span>
         </div>
       </aside>
     </section>
 
     <section class="project-highlights fade-in">
       <article class="highlight-card">
-        <strong>Type</strong>
-        <p>Projet d'ecole fil rouge autour d'un environnement Linux.</p>
+        <strong>Objectif</strong>
+        <p>Construire un homelab multiservice avec Docker Compose et centraliser les services dans un environnement clair et exploitable.</p>
       </article>
       <article class="highlight-card">
-        <strong>Temps passe</strong>
-        <p>A preciser selon la duree reelle du projet.</p>
+        <strong>Mon rôle</strong>
+        <p>Rédiger le fichier Compose, choisir les services, configurer les ports, volumes et réseaux, puis vérifier l'accès aux applications.</p>
+      </article>
+      <article class="highlight-card">
+        <strong>Résultat</strong>
+        <p>Un homelab fonctionnel regroupant des outils de dashboard, sécurité, supervision, documentation, proxy, sauvegarde et administration.</p>
+      </article>
+    </section>
+
+    <section class="project-highlights fade-in">
+      <article class="highlight-card">
+        <strong>Type</strong>
+        <p>Projet d'école autour de Docker Compose et de l'auto-hébergement.</p>
+      </article>
+      <article class="highlight-card">
+        <strong>Temps passé</strong>
+        <p>2 jours</p>
       </article>
       <article class="highlight-card">
         <strong>Budget</strong>
-        <p>Non facture, realise dans le cadre pedagogique de la formation.</p>
+        <p>Estimation fictive de 168,28 EUR bruts en temps humain (1 personne x 2 jours x 7 h x 12,02 EUR), réalisée dans le cadre pédagogique avec des images Docker majoritairement open source.</p>
       </article>
       <article class="highlight-card">
-        <strong>Debut</strong>
-        <p>A preciser.</p>
+        <strong>Début</strong>
+        <p>22 avril 2026</p>
       </article>
       <article class="highlight-card">
         <strong>Fin</strong>
-        <p>A preciser.</p>
+        <p>23 avril 2026</p>
       </article>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Travail realise</h2>
+      <h2>Travail réalisé</h2>
       <div class="project-grid">
         <div>
           <ul>
-            <li>Mise en place d'un environnement de travail sous Linux.</li>
-            <li>Application de consignes techniques dans un contexte d'entreprise simule.</li>
-            <li>Organisation du travail par etapes avec validation des points attendus.</li>
+            <li>Création d'un fichier <code>docker-compose.yml</code> pour orchestrer les services du homelab.</li>
+            <li>Mise en place d'un réseau Docker commun nommé <code>homelab</code>.</li>
+            <li>Configuration des ports d'accès pour chaque application.</li>
+            <li>Ajout de volumes persistants pour conserver les données des services.</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li>Configuration et tests des elements necessaires au bon fonctionnement du systeme.</li>
-            <li>Analyse des resultats et correction des problemes rencontres.</li>
-            <li>Documentation du travail realise pour garder une trace exploitable.</li>
+            <li>Intégration de services comme Vaultwarden, IT-Tools, Wiki.js, Portainer, Pi-hole et Uptime Kuma.</li>
+            <li>Ajout de Nginx Proxy Manager pour préparer la gestion des accès web.</li>
+            <li>Vérification de l'accès aux interfaces web et du bon démarrage des conteneurs.</li>
+            <li>Préparation d'une présentation des choix techniques du homelab.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Difficultes et points d'attention</h2>
+      <h2>Services intégrés</h2>
+      <div class="project-grid">
+        <div>
+          <ul>
+            <li><strong>Dashy / Homepage :</strong> interfaces de centralisation des services.</li>
+            <li><strong>IT-Tools :</strong> boîte à outils web pour l'administration et les tests.</li>
+            <li><strong>Vaultwarden :</strong> gestionnaire de mots de passe auto-hébergé.</li>
+            <li><strong>Wiki.js :</strong> documentation interne avec base PostgreSQL.</li>
+            <li><strong>Code-server :</strong> environnement de développement accessible depuis le navigateur.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Uptime Kuma :</strong> supervision de disponibilité des services.</li>
+            <li><strong>Nginx Proxy Manager :</strong> reverse proxy et préparation des accès HTTPS.</li>
+            <li><strong>Portainer :</strong> administration des conteneurs Docker.</li>
+            <li><strong>Pi-hole :</strong> filtrage DNS et blocage de domaines indésirables.</li>
+            <li><strong>Duplicati / Open WebUI :</strong> sauvegarde et expérimentation autour de services web.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section project-section-card fade-in">
+      <h2>Difficultés et points d'attention</h2>
       <ul>
-        <li>Respecter une progression logique dans le projet pour ne pas bloquer les etapes suivantes.</li>
-        <li>Verifier precisement chaque configuration avant de poursuivre.</li>
-        <li>Conserver une trace claire du travail pour pouvoir expliquer et justifier les choix faits.</li>
+        <li>Éviter les conflits de ports entre les différents services exposés.</li>
+        <li>Organiser proprement les volumes pour conserver les données importantes.</li>
+        <li>Choisir des services utiles sans surcharger inutilement le homelab.</li>
+        <li>Penser à la sécurité des accès, notamment pour les services sensibles comme Vaultwarden.</li>
+        <li>Documenter les choix techniques pour pouvoir les présenter et les justifier.</li>
       </ul>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Schemas et captures a ajouter</h2>
-      <div class="project-assets">
-        <div class="asset-slot">
-          <strong>Schema de l'environnement</strong>
-          <p>Ajoute ici un schema du TP Linux : machines, reseau, services ou architecture generale.</p>
-          <span>Exemple : schema-shokacorp-linux.png</span>
-        </div>
-        <div class="asset-slot">
-          <strong>Capture technique</strong>
-          <p>Reserve cet emplacement pour une capture de terminal, de configuration ou d'un service mis en place.</p>
-          <span>Exemple : capture-terminal-linux.png</span>
-        </div>
-        <div class="asset-slot">
-          <strong>Preuve de resultat</strong>
-          <p>Tu peux ajouter ici un test reussi, une verification de service ou une validation attendue par le TP.</p>
-          <span>Exemple : validation-tp-linux.png</span>
-        </div>
+      <h2>Captures du homelab</h2>
+      <details class="project-code-toggle">
+        <summary>Voir le fichier docker-compose.yml</summary>
+        <pre><code>services:
+  dashy:
+    image: lissy93/dashy
+    container_name: dashy
+    ports:
+      - "8080:8080"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ['CMD', 'node', '/app/services/healthcheck']
+      interval: 1m30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - homelab
+
+  homepage:
+    image: ghcr.io/gethomepage/homepage:latest
+    container_name: homepage
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+    volumes:
+      - ./homepage:/app/config
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - PUID=0
+      - PGID=0
+    networks:
+      - homelab
+
+  it-tools:
+    image: ghcr.io/corentinth/it-tools:latest
+    container_name: it-tools
+    ports:
+      - "8081:80"
+    restart: unless-stopped
+    networks:
+      - homelab
+
+  bentopdf:
+    image: bentopdfteam/bentopdf-simple:latest
+    container_name: bentopdf
+    restart: unless-stopped
+    ports:
+      - "8082:8080"
+    environment:
+      - DISABLE_IPV6=true
+    networks:
+      - homelab
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:2
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - "3001:3001"
+    volumes:
+      - ./uptime-kuma:/app/data
+    networks:
+      - homelab
+
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    restart: unless-stopped
+    ports:
+      - "8083:80"
+    volumes:
+      - ./vaultwarden:/data
+    environment:
+      - WEBSOCKET_ENABLED=true
+    networks:
+      - homelab
+
+  db:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: wiki
+      POSTGRES_PASSWORD: wikijsrocks
+      POSTGRES_USER: wikijs
+    logging:
+      driver: none
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    networks:
+      - homelab
+
+  wiki:
+    image: ghcr.io/requarks/wiki:2
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "8084:3000"
+    environment:
+      DB_TYPE: postgres
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: wikijs
+      DB_PASS: wikijsrocks
+      DB_NAME: wiki
+    networks:
+      - homelab
+
+  code-server:
+    image: codercom/code-server:4.16.1-ubuntu
+    container_name: code-server
+    restart: unless-stopped
+    ports:
+      - "8085:8080"
+    environment:
+      - DOCKER_USER=coder
+      - PASSWORD=Password
+    volumes:
+      - ./config:/config
+      - ./:/home/coder/workspace
+    networks:
+      - homelab
+
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    ports:
+      - "3000:8080"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - WEBUI_AUTH=false
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      - open-webui:/app/backend/data
+    networks:
+      - homelab
+
+  nginx-proxy-manager:
+    image: jc21/nginx-proxy-manager:latest
+    container_name: npm
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "81:81"
+      - "443:443"
+    volumes:
+      - ./npm/data:/data
+      - ./npm/letsencrypt:/etc/letsencrypt
+      - /root/ssl:/ssl
+    networks:
+      - homelab
+
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./portainer:/data
+    networks:
+      - homelab
+
+  pihole:
+    image: pihole/pihole:latest
+    container_name: pihole
+    restart: unless-stopped
+    ports:
+      - "53:53/tcp"
+      - "53:53/udp"
+      - "8086:80"
+    environment:
+      - TZ=Europe/Paris
+      - WEBPASSWORD=motdepassefort
+    volumes:
+      - ./pihole/etc-pihole:/etc/pihole
+      - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+    networks:
+      - homelab
+
+  duplicati:
+    image: duplicati/duplicati:latest
+    container_name: duplicati
+    restart: unless-stopped
+    ports:
+      - "8200:8200"
+    volumes:
+      - ./backup:/backups
+      - /root/homelab:/source
+    networks:
+      - homelab
+
+volumes:
+  db-data:
+  open-webui:
+
+networks:
+  homelab:</code></pre>
+      </details>
+      <div class="project-gallery project-gallery-wide">
+        <figure>
+          <img src="homelab-bitwarden.png" alt="Interface Vaultwarden du homelab">
+          <figcaption>Vaultwarden intégré au homelab pour la gestion des identifiants et des coffres.</figcaption>
+        </figure>
+        <figure>
+          <img src="homelab-it-tools.png" alt="Interface IT-Tools du homelab">
+          <figcaption>IT-Tools intégré au homelab pour disposer d'outils rapides de cryptographie, conversion et vérification.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="project-section project-section-card fade-in">
       <h2>Competences BTS SIO SISR mobilisees</h2>
       <ul>
-        <li>Installer et configurer un environnement systeme dans un cadre pedagogique structure.</li>
-        <li>Appliquer une methode de travail rigoureuse pour atteindre un resultat attendu.</li>
-        <li>Tester, valider et documenter une configuration Linux.</li>
+        <li>Installer et configurer des services dans un environnement Linux conteneurise.</li>
+        <li>Utiliser Docker Compose pour déclarer, organiser et maintenir plusieurs applications.</li>
+        <li>Verifier, tester et documenter une solution d'infrastructure auto-hebergee.</li>
       </ul>
     </section>
 

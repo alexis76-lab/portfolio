@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Projet SIEM Wazuh : centralisation des logs, supervision, alertes de securite et analyse d'evenements sur l'infrastructure.">
-  <title>Projet 6 - SIEM Wazuh</title>
+  <meta name="description" content="Projet SIEM Wazuh : centralisation des logs, supervision, alertes de sécurité et analyse d'événements sur l'infrastructure.">
+  <title>Projet 6 - SIEM avec Wazuh</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -15,113 +15,128 @@
       <ul>
         <li><a href="index.html#projets">&#8592; Retour</a></li>
       </ul>
-      <button class="theme-toggle" type="button" aria-label="Changer de theme"></button>
+      <button class="theme-toggle" type="button" aria-label="Changer de thème"></button>
     </nav>
   </header>
 
   <main class="project-page">
     <section class="project-hero fade-in">
-      <img src="centre-operations-securite-moderne.png" alt="Mise en place SIEM Wazuh" class="project-image parallax">
-      <h1>Mise en place d'un SIEM avec Wazuh</h1>
-      <p class="subtitle">Projet de cybersurveillance visant a centraliser les logs, detecter les comportements suspects et produire des alertes exploitables.</p>
+      <img src="centre-operations-securite-moderne.png" alt="Projet SIEM avec Wazuh" class="project-image parallax">
+      <h1>SIEM avec Wazuh</h1>
+      <p class="subtitle">Projet d'entreprise en cours autour de Wazuh, utilise sur une VM Linux pour suivre les agents, exploiter les logs et analyser les événements de sécurité.</p>
     </section>
 
     <section class="project-summary fade-in">
       <div class="project-panel">
         <h2>Contexte</h2>
-        <p>Le but etait d'ameliorer la visibilite sur l'infrastructure en reunissant les evenements de securite sur une plateforme unique. Ce projet m'a permis d'aborder la logique de supervision, de detection et d'analyse des evenements dans un cadre cyber.</p>
+        <p>Un SIEM, pour Security Information and Event Management, est une solution qui centralise les journaux d'événements d'un système d'information afin de faciliter la surveillance, la détection et l'analyse des incidents de sécurité.</p>
+        <p>Wazuh est une solution SIEM open source qui permet de collecter les logs, suivre l'état des agents, détecter certaines activités suspectes et fournir des tableaux de bord d'analyse.</p>
+        <p>Ce projet est réalisé en entreprise afin d'améliorer la visibilité sur l'infrastructure grace a Wazuh. La solution fonctionne sur une VM Linux et permet de suivre les endpoints, de consulter les logs remontes et d'analyser les événements de sécurité.</p>
+        <p>Le projet est toujours en cours : les remontées d'événements sont déjà exploitables, mais certains éléments restent a finaliser, notamment les notifications.</p>
       </div>
       <aside class="project-panel">
         <h3>Outils et environnement</h3>
         <div class="project-tags">
           <span class="project-tag">Wazuh</span>
+          <span class="project-tag">VM Linux</span>
           <span class="project-tag">Logs</span>
           <span class="project-tag">Alertes</span>
-          <span class="project-tag">Dashboard</span>
           <span class="project-tag">SIEM</span>
+          <span class="project-tag">En cours</span>
+          <span class="project-tag">Projet entreprise</span>
         </div>
       </aside>
     </section>
 
     <section class="project-highlights fade-in">
       <article class="highlight-card">
-        <strong>Type</strong>
-        <p>Projet cyber de supervision et de detection de menaces.</p>
+        <strong>Objectif</strong>
+        <p>Centraliser les logs et surveiller les endpoints afin de mieux détecter les comportements suspects.</p>
       </article>
       <article class="highlight-card">
-        <strong>Temps passe</strong>
-        <p>A preciser selon la duree reelle du projet.</p>
+        <strong>Mon rôle</strong>
+        <p>Connecter les agents, vérifier les remontées de logs et analyser les logs de sécurité.</p>
+      </article>
+      <article class="highlight-card">
+        <strong>Résultat</strong>
+        <p>Une supervision Wazuh exploitable, avec les agents visibles et l'analyse des logs en place. Les notifications restent a finaliser.</p>
+      </article>
+    </section>
+
+    <section class="project-highlights fade-in">
+      <article class="highlight-card">
+        <strong>Type</strong>
+        <p>Projet entreprise de supervision cyber et de détection de menaces, actuellement en cours.</p>
+      </article>
+      <article class="highlight-card">
+        <strong>Temps passé</strong>
+        <p>Projet toujours en cours, avec des ajustements progressifs selon les tests et les besoins.</p>
       </article>
       <article class="highlight-card">
         <strong>Budget</strong>
-        <p>Budget faible, base sur des composants open source.</p>
+        <p>Base sur une VM Linux et des composants open source.</p>
       </article>
       <article class="highlight-card">
-        <strong>Debut</strong>
-        <p>A preciser.</p>
+        <strong>Début</strong>
+        <p>Projet demarre et toujours en cours.</p>
       </article>
       <article class="highlight-card">
         <strong>Fin</strong>
-        <p>A preciser.</p>
+        <p>Non terminée : les notifications restent a finaliser.</p>
       </article>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Travail realise</h2>
+      <h2>Travail réalisé</h2>
       <div class="project-grid">
         <div>
           <ul>
-            <li>Installation du serveur Wazuh avec manager et interface de pilotage.</li>
-            <li>Deploiement des agents sur les machines a superviser.</li>
-            <li>Configuration initiale des tableaux de bord et des remontees d'evenements.</li>
+            <li>Création d'une VM Linux pour héberger Wazuh.</li>
+            <li>Connexion des agents Wazuh aux machines a superviser.</li>
+            <li>Vérification du statut des agents et des systèmes remontés dans le dashboard.</li>
+            <li>Contrôle des remontées de logs.</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li>Definition de regles et seuils pour faire ressortir les alertes utiles.</li>
-            <li>Collecte des logs systeme, reseau et authentification.</li>
-            <li>Tests de validation pour verifier le bon fonctionnement des alertes.</li>
+            <li>Analyse des logs de sécurité dans Threat Hunting.</li>
+            <li>Lecture des événements d'authentification et des alertes remontées.</li>
+            <li>Identification des points restant a finaliser, dont les notifications.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Difficultes et points d'attention</h2>
+      <h2>Difficultés et points d'attention</h2>
       <ul>
         <li>Identifier les alertes vraiment pertinentes pour eviter le bruit inutile.</li>
-        <li>Verifier la bonne remontee des logs selon les postes et services supervises.</li>
-        <li>Structurer l'analyse pour distinguer evenement normal et comportement suspect.</li>
+        <li>Vérifier la bonne remontée des logs selon les postes et services supervises.</li>
+        <li>Structurer l'analyse pour distinguer événement normal et comportement suspect.</li>
+        <li>Finaliser les notifications pour rendre les alertes plus exploitables au quotidien.</li>
       </ul>
     </section>
 
     <section class="project-section project-section-card fade-in">
       <h2>Schemas et captures a ajouter</h2>
-      <div class="project-assets">
-        <div class="asset-slot">
-          <strong>Schema d'architecture SIEM</strong>
-          <p>Ajoute ici un schema Wazuh avec manager, agents, dashboard et flux de logs.</p>
-          <span>Exemple : schema-wazuh.png</span>
-        </div>
-        <div class="asset-slot">
-          <strong>Capture du dashboard</strong>
-          <p>Place une capture du tableau de bord, d'une alerte ou d'une visualisation de logs.</p>
-          <span>Exemple : dashboard-wazuh.png</span>
-        </div>
-        <div class="asset-slot">
-          <strong>Preuve de detection</strong>
-          <p>Tu peux ajouter ici un test d'alerte, un evenement remonte ou une regle validee.</p>
-          <span>Exemple : alerte-wazuh.png</span>
-        </div>
+      <div class="project-gallery project-gallery-wide">
+        <figure>
+          <img src="wazuh-endpoints.png" alt="Vue des endpoints supervises dans Wazuh">
+          <figcaption>Vue des endpoints supervises dans Wazuh, avec les agents actifs, les systèmes d'exploitation et les groupes associés.</figcaption>
+        </figure>
+        <figure>
+          <img src="wazuh-threat-hunting.png" alt="Tableau de bord Threat Hunting Wazuh">
+          <figcaption>Tableau de bord Threat Hunting permettant d'analyser les événements, les échecs d'authentification et les alertes remontées.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="project-section project-section-card fade-in">
       <h2>Competences BTS SIO SISR mobilisees</h2>
       <ul>
-        <li>Participer a la surveillance et a la securisation d'un systeme d'information.</li>
-        <li>Mettre en place des outils utiles a l'analyse et a la detection.</li>
-        <li>Verifier le bon fonctionnement d'une solution technique orientee cybersecurite.</li>
+        <li>Participer a la surveillance et a la sécurisation d'un système d'information.</li>
+        <li>Mettre en place des outils utiles à l'analyse et à la détection.</li>
+        <li>Verifier le bon fonctionnement d'une solution technique orientée cybersécurité.</li>
       </ul>
     </section>
 
