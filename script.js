@@ -87,6 +87,57 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  const contactForm = document.getElementById("contact-form");
+  if (contactForm) {
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    const formStatus = document.createElement("p");
+    formStatus.className = "form-status";
+    formStatus.setAttribute("role", "status");
+    formStatus.setAttribute("aria-live", "polite");
+    contactForm.appendChild(formStatus);
+
+    contactForm.addEventListener("submit", async event => {
+      event.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const originalButtonText = submitButton?.textContent || "Envoyer";
+
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Envoi...";
+      }
+
+      formStatus.textContent = "";
+      formStatus.className = "form-status";
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: contactForm.method || "POST",
+          body: formData,
+          headers: {
+            Accept: "application/json"
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error("Erreur lors de l'envoi du message.");
+        }
+
+        contactForm.reset();
+        formStatus.textContent = "Message envoyé avec succès.";
+        formStatus.classList.add("success");
+      } catch {
+        formStatus.textContent = "Impossible d'envoyer le message pour le moment.";
+        formStatus.classList.add("error");
+      } finally {
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonText;
+        }
+      }
+    });
+  }
+
   const parallaxImages = document.querySelectorAll(".parallax");
   if (parallaxImages.length) {
     window.addEventListener("mousemove", event => {

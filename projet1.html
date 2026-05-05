@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet 1 - Configuration d’un Active Directory</title>
+  <meta name="description" content="Situation professionnelle E6 BTS SIO SISR : configuration d'un Active Directory sous Windows Server.">
+  <title>Projet E6 - Configuration Active Directory</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -21,24 +22,24 @@
   <main class="project-page">
     <section class="project-hero fade-in">
       <img src="salle-serveur-moderne-securisee.png" alt="Projet Active Directory" class="project-image parallax">
-      <h1>TP : Configuration d’un Active Directory</h1>
-      <p class="subtitle">Projet d’école centré sur la mise en place d’un service Active Directory Domain Services, depuis la configuration réseau jusqu’à la validation finale du contrôleur de domaine.</p>
+      <h1>Situation E6 : Configuration d'un Active Directory</h1>
+      <p class="subtitle">Mise en place d'un contrôleur de domaine Windows Server avec configuration réseau, installation du rôle AD DS, promotion du serveur et vérifications de fonctionnement.</p>
     </section>
 
     <section class="project-summary fade-in">
       <div class="project-panel">
         <h2>Contexte</h2>
-        <p>Ce projet a été réalisé dans le cadre d’un TP de formation sur Windows Server. L’objectif était de comprendre le rôle d’Active Directory Domain Services puis de suivre une procédure complète de configuration d’un serveur jusqu’à sa promotion en contrôleur de domaine.</p>
-        <p>Cette situation professionnelle est utilisée pour l’épreuve E6 du BTS SIO option SISR.</p>
+        <p>Ce projet a été réalisé dans le cadre d'un TP de formation en BTS SIO option SISR. L'objectif était de comprendre le rôle d'Active Directory dans une infrastructure et de mettre en place un service d'annuaire exploitable.</p>
+        <p>Cette situation professionnelle est utilisée pour l'épreuve E6, car elle montre une démarche complète : préparation, installation, configuration, validation et documentation.</p>
       </div>
       <aside class="project-panel">
-        <h3>Outils et environnement</h3>
+        <h3>Environnement</h3>
         <div class="project-tags">
           <span class="project-tag">Windows Server</span>
           <span class="project-tag">Active Directory</span>
           <span class="project-tag">AD DS</span>
-          <span class="project-tag">TP d’école</span>
-          <span class="project-tag">Épreuve E6 BTS SIO</span>
+          <span class="project-tag">DNS</span>
+          <span class="project-tag">Épreuve E6</span>
         </div>
       </aside>
     </section>
@@ -46,38 +47,34 @@
     <section class="project-highlights fade-in">
       <article class="highlight-card">
         <strong>Objectif</strong>
-        <p>Mettre en place un Active Directory fonctionnel et comprendre le rôle d’AD DS dans une infrastructure.</p>
+        <p>Installer un annuaire Active Directory fonctionnel pour centraliser l'authentification et l'administration du domaine.</p>
       </article>
       <article class="highlight-card">
         <strong>Mon rôle</strong>
-        <p>Configurer le serveur, installer le rôle AD DS, promouvoir la machine et vérifier le bon fonctionnement final.</p>
+        <p>Configurer le serveur, installer le rôle AD DS, promouvoir la machine et contrôler le bon état du service.</p>
       </article>
       <article class="highlight-card">
         <strong>Résultat</strong>
-        <p>Un contrôleur de domaine configuré avec les prérequis réseau et les vérifications de base du service.</p>
+        <p>Un contrôleur de domaine opérationnel, prêt à accueillir des comptes, groupes et postes clients.</p>
       </article>
     </section>
 
     <section class="project-highlights fade-in">
       <article class="highlight-card">
         <strong>Type</strong>
-        <p>Projet d’école en groupe autour de la configuration d’un Active Directory.</p>
+        <p>Projet d'école réalisé en groupe.</p>
       </article>
       <article class="highlight-card">
-        <strong>Temps passé</strong>
-        <p>4 heures de travail sur le projet.</p>
+        <strong>Durée</strong>
+        <p>4 heures de travail sur la réalisation et la validation.</p>
       </article>
       <article class="highlight-card">
-        <strong>Budget</strong>
-        <p>Estimation fictive de 192,32 € bruts en temps humain (2 groupes x 2 personnes x 4 h x 12,02 €), dans le cadre d’un projet d’école.</p>
+        <strong>Période</strong>
+        <p>10 octobre 2025.</p>
       </article>
       <article class="highlight-card">
-        <strong>Début</strong>
-        <p>10 octobre 2025</p>
-      </article>
-      <article class="highlight-card">
-        <strong>Fin</strong>
-        <p>10 octobre 2025</p>
+        <strong>Budget estimé</strong>
+        <p>192,32 euros bruts en temps humain dans le cadre du TP.</p>
       </article>
     </section>
 
@@ -86,73 +83,80 @@
       <div class="project-grid">
         <div>
           <ul>
-            <li><strong>Partie 1 :</strong> comprendre le rôle d’Active Directory Domain Services.</li>
-            <li><strong>Étape 1 :</strong> configurer une adresse IP statique sur le serveur.</li>
-            <li><strong>Étape 2 :</strong> installer le rôle AD DS.</li>
+            <li><strong>Analyse :</strong> identification du rôle d'Active Directory Domain Services dans le système d'information.</li>
+            <li><strong>Préparation :</strong> vérification du serveur et configuration d'une adresse IP statique.</li>
+            <li><strong>Installation :</strong> ajout du rôle AD DS depuis Windows Server.</li>
           </ul>
         </div>
         <div>
           <ul>
-            <li><strong>Étape 3 :</strong> promouvoir le serveur en contrôleur de domaine.</li>
-            <li><strong>Étape 4 :</strong> vérifier la configuration et le bon fonctionnement global.</li>
-            <li><strong>Validation :</strong> s’assurer que le service est correctement déployé et exploitable.</li>
+            <li><strong>Promotion :</strong> transformation du serveur en contrôleur de domaine.</li>
+            <li><strong>Validation :</strong> vérification du domaine, du service DNS et de l'état général de l'installation.</li>
+            <li><strong>Documentation :</strong> conservation du TP et de la fiche descriptive E6 comme preuves.</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Travail technique réalisé</h2>
+      <h2>Difficultés et solutions</h2>
       <ul>
-        <li>Préparation du serveur et vérification des prérequis réseau.</li>
-        <li>Définition d’une adresse IP statique pour garantir la stabilité de l’infrastructure.</li>
-        <li>Ajout du rôle Active Directory Domain Services depuis Windows Server.</li>
-        <li>Promotion du serveur en contrôleur de domaine via l’assistant de configuration.</li>
-        <li>Vérification finale de l’installation et du bon état du service Active Directory.</li>
+        <li><strong>Adressage réseau :</strong> l'adresse IP devait être stable pour éviter les erreurs de résolution et de promotion du domaine.</li>
+        <li><strong>Ordre des étapes :</strong> la configuration réseau devait être validée avant l'installation du rôle AD DS.</li>
+        <li><strong>Contrôle final :</strong> les vérifications ont permis de confirmer que le serveur était bien contrôleur de domaine.</li>
       </ul>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Ce que ce TP m’a apporté</h2>
-      <ul>
-        <li>Mieux comprendre la logique d’un annuaire Active Directory dans un SI.</li>
-        <li>Suivre une procédure d’installation technique et la valider étape par étape.</li>
-        <li>Faire le lien entre configuration réseau, services Windows Server et administration de domaine.</li>
-      </ul>
-    </section>
-
-    <section class="project-section project-section-card fade-in">
-      <h2>Schémas et captures</h2>
-      <div class="project-assets">
-        <div class="asset-slot">
-          <strong>Schéma d’architecture</strong>
-          <p>Ajoute ici un schéma simple du serveur, du domaine et des services reliés à l’AD.</p>
-          <span>Exemple : schema-ad-tp.png</span>
-        </div>
-        <div class="asset-slot">
-          <strong>Capture du rôle AD DS</strong>
-          <p>Réserve cet emplacement pour une capture de l’installation du rôle ou de l’assistant de promotion.</p>
-          <span>Exemple : installation-ad-ds.png</span>
-        </div>
-        <div class="asset-slot">
-          <strong>Vérification finale</strong>
-          <p>Tu peux ajouter une capture montrant que le serveur est bien contrôleur de domaine ou que la configuration est validée.</p>
-          <span>Exemple : verification-controleur-domaine.png</span>
-        </div>
+      <h2>Preuves et livrables</h2>
+      <div class="evidence-list">
+        <article>
+          <strong>Procédure de TP</strong>
+          <p>Le PDF du TP présente les étapes suivies pour installer et configurer Active Directory.</p>
+        </article>
+        <article>
+          <strong>Fiche descriptive E6</strong>
+          <p>La fiche formalise le contexte, les compétences mobilisées et la production réalisée.</p>
+        </article>
+        <article>
+          <strong>Résultat attendu</strong>
+          <p>Serveur promu en contrôleur de domaine avec configuration réseau cohérente.</p>
+        </article>
       </div>
     </section>
 
     <section class="project-section project-section-card fade-in">
-      <h2>Compétences BTS SIO SISR mobilisées</h2>
+      <h2>Compétences BTS SIO mobilisées</h2>
+      <div class="competence-links">
+        <span>Gérer le patrimoine informatique</span>
+        <span>Mettre à disposition un service informatique</span>
+        <span>Travailler en mode projet</span>
+        <span>Organiser son développement professionnel</span>
+      </div>
       <ul>
         <li>Installer et configurer un service système répondant à un besoin technique.</li>
         <li>Administrer un environnement serveur dans un cadre de mise en pratique.</li>
-        <li>Vérifier, documenter et valider une solution d’infrastructure.</li>
+        <li>Documenter une solution et vérifier son bon fonctionnement.</li>
       </ul>
     </section>
 
+    <section class="project-section project-section-card fade-in">
+      <h2>Documents associés</h2>
+      <div class="project-documents">
+        <article class="document-card">
+          <strong>Fiche descriptive E6</strong>
+          <p>Fiche de situation professionnelle SISR n°1 pour l'épreuve E6.</p>
+          <a href="fiche-e6-sisr-1-active-directory.pdf" class="btn" target="_blank" rel="noopener noreferrer">Ouvrir la fiche PDF</a>
+        </article>
+        <article class="document-card">
+          <strong>TP Configuration Active Directory</strong>
+          <p>Document du TP dédié à la configuration d'un Active Directory.</p>
+          <a href="tp-active-directory.pdf" class="btn secondary" target="_blank" rel="noopener noreferrer">Ouvrir le TP PDF</a>
+        </article>
+      </div>
+    </section>
+
     <div class="project-buttons fade-in">
-      <a href="fiche-e6-sisr-1-active-directory.docx" class="btn" download>Télécharger la fiche E6</a>
       <a href="index.html#projets" class="btn">&#8592; Retour au portfolio</a>
     </div>
   </main>
